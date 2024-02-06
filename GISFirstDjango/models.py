@@ -12,7 +12,7 @@ class Person(models.Model):
 class Student(models.Model):
     name = models.OneToOneField(Person, null=True, on_delete=models.SET_NULL)
     grade = models.CharField(max_length=2)
-    gmail = models.EmailField()
+    gmail = models.EmailField(null=True)
 
 
 class Teacher(models.Model):
