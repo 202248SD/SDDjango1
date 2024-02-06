@@ -6,7 +6,7 @@ class Person(models.Model):
     last_name = models.CharField(max_length=30)
     age = models.IntegerField(blank=False, null=True)
     age = models.IntegerField(null=True)
-    gender = models.CharField(max_length=1)
+    gender = models.CharField(max_length=1, null=True)
 
 
 class Student(models.Model):
@@ -22,7 +22,9 @@ class Teacher(models.Model):
 
 class TeachingGroup(models.Model):
     name = models.CharField(max_length=30, null=True)
-    students = models.ForeignKey(Person, null=True, on_delete=models.SET_NULL)
-    year_group = models.IntegerField(blank=False, null=True)
     teacher = models.OneToOneField(Teacher, null=True, on_delete=models.SET_NULL)
+    year_group = models.IntegerField(blank=False, null=True)
+    students = models.ForeignKey(Person, null=True, on_delete=models.SET_NULL)
+
+
 
