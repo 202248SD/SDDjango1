@@ -21,4 +21,4 @@ class Teacher(models.Model):
 
 class TeachingGroup(models.Model):
     teacher = models.OneToOneField(Teacher, null=True, on_delete=models.SET_NULL)
-    students = models.ManyToManyField(Student, null=True)
+
