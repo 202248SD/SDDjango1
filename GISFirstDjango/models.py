@@ -5,7 +5,6 @@ class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     age = models.IntegerField(blank=False, null=True)
-    age = models.IntegerField(null=True)
     gender = models.CharField(max_length=1, null=True)
 
 
